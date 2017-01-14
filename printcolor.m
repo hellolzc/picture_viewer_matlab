@@ -24,18 +24,28 @@ fprintf(RED);
 fprintf('Red');
 fprintf(YELLOW);
 fprintf('Yellow');
+fprintf(BLUE);
+fprintf('Blue');
+fprintf(PURPLE)
+fprintf('Purple');
 fprintf(NONE);
+fprintf('\n');
 
-clear;
-inpicture=imread('colortable.jpg');
+%inpicture=imread('binary.bmp');
+%zoom=0.3;
 [height,width,wei]=size(inpicture);
 fprintf('H:%d,W:%d\n',height,width);
 
-pic=imresize(inpicture,0.3);
+pic=imresize(inpicture,zoom);
+fprintf('H:%d,W:%d\n',height,width);
 [height,width,wei]=size(pic);
 for i=1:height
   for j=1:width
-    findcolor(pic(i,j,1),pic(i,j,2),pic(i,j,3));
+    if wei==3
+      findcolor(pic(i,j,1),pic(i,j,2),pic(i,j,3));
+    else
+      findcolor(pic(i,j,1),pic(i,j,1),pic(i,j,1));
+    end
   end
   fprintf('\n');
 end

@@ -19,15 +19,13 @@ L_CYAN     =  '\033[1;46m';
 GRAY       =  '\033[0;47m';
 WHITE      =  '\033[1;47m';
 
-light0=10;
 light1=100;
-light2=200;
 
 avglight=(r+g+b)/3;
 minv=min([r,g,b]);
 diff=[r-minv;g-minv;b-minv];
 for i=1:3
-  if diff(i) > 10
+  if diff(i) > 20
     diff(i) = 1;
   else
     diff(i) = 0;
@@ -78,7 +76,7 @@ case 6
         fprintf(BROWN);
     end
 end
-fprintf(' ');
+fprintf('#');
 fprintf(NONE);
 end
 
