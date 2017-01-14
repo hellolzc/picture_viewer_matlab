@@ -21,7 +21,7 @@ WHITE      =  '\033[1;47m';
 
 light1=100;
 
-avglight=(r+g+b)/3;
+avglight=(double(r)+double(g)+double(b))/3;
 minv=min([r,g,b]);
 diff=[r-minv;g-minv;b-minv];
 for i=1:3
@@ -76,7 +76,12 @@ case 6
         fprintf(BROWN);
     end
 end
-fprintf('#');
+if avglight>light1
+  fprintf(' ');
+else
+  fprintf('\033[30m');
+  fprintf('#');
+end
 fprintf(NONE);
 end
 

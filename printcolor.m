@@ -31,8 +31,8 @@ fprintf('Purple');
 fprintf(NONE);
 fprintf('\n');
 
-%inpicture=imread('binary.bmp');
-%zoom=0.3;
+%inpicture=imread('white.bmp');
+%zoom=0.5;
 [height,width,wei]=size(inpicture);
 fprintf('H:%d,W:%d\n',height,width);
 
