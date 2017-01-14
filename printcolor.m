@@ -37,8 +37,8 @@ fprintf('\n');
 fprintf('H:%d,W:%d\n',height,width);
 
 pic=imresize(inpicture,zoom);
-fprintf('H:%d,W:%d\n',height,width);
 [height,width,wei]=size(pic);
+fprintf('H:%d,W:%d\n',height,width);
 for i=1:height
   for j=1:width
     if wei==3

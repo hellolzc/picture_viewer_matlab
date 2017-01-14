@@ -20,6 +20,7 @@ GRAY       =  '\033[0;47m';
 WHITE      =  '\033[1;47m';
 
 light1=100;
+light2=180;
 
 avglight=(double(r)+double(g)+double(b))/3;
 minv=min([r,g,b]);
@@ -77,7 +78,12 @@ case 6
     end
 end
 if avglight>light1
-  fprintf(' ');
+  if avglight>light2
+    fprintf('\033[37m');
+    fprintf('#');
+  else
+    fprintf(' ');
+  end
 else
   fprintf('\033[30m');
   fprintf('#');
